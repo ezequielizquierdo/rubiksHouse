@@ -1,0 +1,99 @@
+[
+  {
+    "id": 1,
+    "title": "Llavero Cubo 1x1",
+    "description": "El Llavero Cubo 1x1 es un accesorio esencial para todo amante de los cubos. Este llavero presenta una característica innovadora: la extensión del vértice es abatible, lo que te permite usarlo como un auténtico llavero 1x1 o presionar la extensión para que se oculte dentro del propio cubo, convirtiéndolo en un cubo 1x1 estándar en un abrir y cerrar de ojos. Asegúrate de obtener este llavero excepcional que combina funcionalidad y estilo. ¡Consíguelo ahora y lleva contigo un pequeño símbolo de la diversión y el desafío que representan los cubos!",
+    "price": 549,
+    "discountPercentage": 12.96,
+    "rating": 4.69,
+    "stock": 94,
+    "brand": "Z-Cube",
+    "category": "1x1",
+    "thumbnail": "https://kubekings.com/34151-home_default/llavero-cubo-1x1.webp",
+    "images": [
+      "https://kubekings.com/34151-home_default/llavero-cubo-1x1.webp",
+      "https://kubekings.com/34150-small_default/llavero-cubo-1x1.jpg",
+      "https://kubekings.com/34152-small_default/llavero-cubo-1x1.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Cubo 1x1",
+    "description": "Descubre el fascinante Cubo Mágico 1x1, una pieza cúbica adornada con 6 pegatinas coloridas que emulan el diseño clásico de un puzzle tridimensional. Perfecto para añadir ese toque especial a tu colección de cubos. Fabricado con impresión 3D de alta calidad, este cubo no solo es un complemento estético, sino también un testimonio de la innovación en el diseño de cubos. ¿Listo para tener esta joya en tus manos?",
+    "price": 899,
+    "discountPercentage": 17.94,
+    "rating": 4.44,
+    "stock": 34,
+    "brand": "Kubekings",
+    "category": "1x1",
+    "thumbnail": "https://kubekings.com/10925-small_default/cubo-1x1.jpg",
+    "images": [
+      "https://kubekings.com/10925-small_default/cubo-1x1.jpg",
+      "https://kubekings.com/10926-small_default/cubo-1x1.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "MeiLong 2x2",
+    "description": "El MeiLong 2x2 destaca por ser uno de los cubos 2x2 con la mejor relación calidad-precio en el mercado. Con una sensación inicial ligeramente áspera, su giro mejora notablemente tras un periodo de adaptación, convirtiéndose en un compañero de juegos suave y ágil. Con tan solo unos ajustes y una gota de lubricante, el MeiLong 2x2 alcanza un rendimiento impresionante, caracterizado por un sorprendente corte de esquinas. Es el aliado perfecto tanto para quienes se aventuran en el mundo del speedcubing como para coleccionistas ávidos. Además, al mejorar la coordinación mano-ojo y fomentar la perseverancia, es una herramienta excelente para desafiar la mente y las habilidades. ¡No esperes más y añade el MeiLong 2x2 a tu colección! Será una adición valiosa tanto para novatos como para expertos en la resolución de cubos.",
+    "price": 899,
+    "discountPercentage": 17.94,
+    "rating": 4.44,
+    "stock": 34,
+    "brand": "Meilong",
+    "category": "2x2",
+    "thumbnail": "https://kubekings.com/36267-medium_default/meilong-2x2.jpg",
+    "images": [
+      "https://kubekings.com/36267-medium_default/meilong-2x2.jpg",
+      "https://kubekings.com/36265-medium_default/meilong-2x2.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "QiYi Qidi W 2x2",
+    "description": "El Qiyi Qidi 2x2 W es un nuevo cubo 2x2 económico de QiYi MoFangGe. Debido a que este rompecabezas tiene su parte interna en plástico primario presenta un giro rápido, suave y controlable desde el primer momento. ¡Esta es una gran opción para conseguir un buen cubo 2x2 a un precio muy económico!.",
+    "price": 899,
+    "discountPercentage": 17.94,
+    "rating": 4.44,
+    "stock": 34,
+    "brand": "Kubekings",
+    "category": "2x2",
+    "thumbnail": "https://kubekings.com/23145-medium_default/qiyi-qidi-w-2x2.jpg",
+    "images": [
+      "https://kubekings.com/23145-medium_default/qiyi-qidi-w-2x2.jpg",
+      "https://kubekings.com/23146-medium_default/qiyi-qidi-w-2x2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "QiYi Warrior 3x3 S",
+    "description": "El QiYi Warrior 3x3 S es el nuevo speedcube económico de la marca qiyi. Es igual que el Qiyi Warrior W, con la diferencia de que la cantidad de plástico usado para la fabricación es menor, de esta forma se abarata el coste del producto haciéndolo más accesible. Pero... ¿esto tiene alguna desventaja en cuanto al rendimiento?, por lo general la respuesta es NO, este nuevo Warrior no es tan robusto y es un poquito más ligero que la anterior versión. Esto hace que el giro sea algo más rápido e inestable, la diferencia es sutil y va a gusto de cada uno, quién prefiera un cubo más rápido este le gustará un poquito más y quien prefiera un cubo más estable le gustara más la versión W, claro que siempre podemos magnetizar este cubo con el kit de conversión magnética y tener el mejor QiYi Warrior",
+    "price": 899,
+    "discountPercentage": 17.94,
+    "rating": 4.44,
+    "stock": 34,
+    "brand": "Qiyi",
+    "category": "3x3",
+    "thumbnail": "https://kubekings.com/16999-medium_default/qiyi-warrior-3x3-s.jpg",
+    "images": [
+      "https://kubekings.com/16999-medium_default/qiyi-warrior-3x3-s.jpg",
+      "https://kubekings.com/17000-medium_default/qiyi-warrior-3x3-s.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "QiYi Warrior W 3x3",
+    "description": "El Qiyi Qidi 2x2 W es un nuevo cubo 2x2 económico de QiYi MoFangGe. Debido a que este rompecabezas tiene su parte interna en plástico primario presenta un giro rápido, suave y controlable desde el primer momento. ¡Esta es una gran opción para conseguir un buen cubo 2x2 a un precio muy económico!.",
+    "price": 899,
+    "discountPercentage": 17.94,
+    "rating": 4.44,
+    "stock": 34,
+    "brand": "Qiyi",
+    "category": "3x3",
+    "thumbnail": "https://kubekings.com/35204-medium_default/qiyi-warrior-w-3x3.jpg",
+    "images": [
+      "https://kubekings.com/35204-medium_default/qiyi-warrior-w-3x3.jpg",
+      "https://kubekings.com/35203-medium_default/qiyi-warrior-w-3x3.jpg"
+    ]
+  }
+]

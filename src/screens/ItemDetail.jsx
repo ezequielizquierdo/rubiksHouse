@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable, SafeAreaView, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../data/products.json";
 import { colors } from "../global/colors";
@@ -14,29 +14,31 @@ const ItemDetail = ({ navigation, route }) => {
   }, [id]);
 
   return (
-    <View style={styles.main}>
+    <SafeAreaView style={styles.main}>
       {product ? (
-        <View style={styles.container}>
-          <Image
-            source={{ uri: product.images[0] }}
-            style={styles.image}
-            resizeMode="cover"
-          />
-          <View style={styles.textContainer}>
-            <Text style={styles.descriptionText}>{product.title}</Text>
-            <Text style={styles.descriptionText}>{product.description}</Text>
-            <Text style={styles.descriptionTextPrice}>${product.price}</Text>
-            <Pressable style={styles.buy}>
-              <Text style={styles.buyText}>Buy now</Text>
-            </Pressable>
+        <ScrollView>
+          <View style={styles.container}>
+            <Image
+              source={{ uri: product.images[0] }}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <View style={styles.textContainer}>
+              <Text style={styles.descriptionText}>{product.title}</Text>
+              <Text style={styles.descriptionText}>{product.description}</Text>
+              <Text style={styles.descriptionTextPrice}>${product.price}</Text>
+              <Pressable style={styles.buy}>
+                <Text style={styles.buyText}>Buy now</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
+        </ScrollView>
       ) : (
         <View>
           <Text>Cargando...</Text>
         </View>
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -46,8 +48,10 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     width: "100%",
+    alignItems: "center",
   },
   container: {
+    flex: 1,
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",

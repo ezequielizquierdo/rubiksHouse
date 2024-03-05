@@ -3,19 +3,19 @@ import CategoryItem from "./CategoryItem";
 import Counter from "./Counter";
 import { useSelector } from "react-redux";
 
-export default function Categories({navigation}) {
-  const categories = useSelector(state.shopReducer.value.categories)
+export default function Categories({ navigation }) {
+  const categories = useSelector((state) => state.shopReducer.value.categories)
 
 
-   
+
   return (
     <View style={styles.container}>
       <FlatList
         data={categories}
         renderItem={({ item }) => <CategoryItem navigation={navigation} category={item} />}
         keyExtractor={(category) => category}
-        />
-        <Counter/>
+      />
+      <Counter />
     </View>
   )
 }

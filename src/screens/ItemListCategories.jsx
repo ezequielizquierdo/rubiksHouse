@@ -6,17 +6,17 @@ import Search from "../components/Search";
 import { useSelector } from "react-redux";
 
 
-export default function ItemListCategories({ navigation, route }) {
+export default function ItemListCategories({ navigation }) {
   const [products, setProducts] = useState([])
   const [keyword, setKeyword] = useState("");
   const productsFilteredByCategory = useSelector((state) => state.shopReducer.value.productsFilteredByCategory)
 
   useEffect(() => {
     const productsFiltered = productsFilteredByCategory.filter((product) =>
-      product.title.includes(keyboard))
+      product.title.includes(keyword))
     setProducts(productsFiltered)
 
-  }, [products, keyword])
+  }, [productsFilteredByCategory, keyword])
 
   console.log("PRODUCTS -->", products)
 

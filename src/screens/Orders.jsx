@@ -1,5 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { FlatList, StyleSheet, View } from 'react-native'
 import orders from "../data/orders.json"
 import OrderItem from '../components/OrderItem'
 

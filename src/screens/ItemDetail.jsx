@@ -2,11 +2,20 @@ import { StyleSheet, Text, View, Image, Pressable, SafeAreaView, ScrollView } fr
 import React, { useEffect, useState } from "react";
 import allProducts from "../data/products.json";
 import { colors } from "../global/colors";
+import { addItem } from "../features/shop/cartSlice";
+import { useDispatch } from "react-redux";
 
 const ItemDetail = ({ navigation, route }) => {
   const [product, setProduct] = useState(null);
 
   const { id } = route.params;
+
+  const dispatch = useDispatch()
+
+  const onAddCart = () => {
+    // despacho la acción - Harcodeo la cantidad
+    dispatch(addItem({...product, quantity: 1}))
+  }
 
   useEffect(() => {
     const productFinded = allProducts.find((product) => product.id === id);
@@ -27,8 +36,8 @@ const ItemDetail = ({ navigation, route }) => {
               <Text style={styles.descriptionText}>{product.title}</Text>
               <Text style={styles.descriptionText}>{product.description}</Text>
               <Text style={styles.descriptionTextPrice}>${product.price}</Text>
-              <Pressable style={styles.buy}>
-                <Text style={styles.buyText}>Buy now</Text>
+              <Pressable style={styles.buy} onPress={onAddCart}>
+                <Text style={styles.buyText}>Agregar al carrito</Text>
               </Pressable>
             </View>
           </View>

@@ -8,11 +8,11 @@ export const shopSlice = createSlice({
   name: "shop",
   initialState: {
     value: {
-      categorySelected: "",
-      productIdSelected: null,
       products: allProducts,
       categories: allCategories,
-      productsFilteredByCategory: []
+      categorySelected: "",
+      productIdSelected: null,
+      productsFilteredByCategory: [],
     },
   },
   reducers: {

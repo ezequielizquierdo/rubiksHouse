@@ -1,9 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import Home from "../screens/Home";
 import ItemDetail from "../screens/ItemDetail";
 import ItemListCategories from "../screens/ItemListCategories";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 
 const Navigator = () => {
   const Stack = createNativeStackNavigator();

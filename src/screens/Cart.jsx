@@ -1,54 +1,60 @@
-import { useEffect, useState } from 'react'
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
-import allCartItems from "../data/cart.json"
-import CartItem from '../components/CartItem'
-import { useSelector } from 'react-redux'
-import { usePostOrderMutation } from '../services/shopService'
+import { useEffect, useState } from "react";
+import { Button, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import allCartItems from "../data/cart.json";
+import CartItem from "../components/CartItem";
+import { useSelector } from "react-redux";
+import { usePostOrderMutation } from "../services/shopService";
+import { colors } from "../global/colors";
 
 const Cart = () => {
-  // const [cartItems, setCartItems] = useState([])
-  // const [total, setTotal] = useState(0)
-
   const cartItems = useSelector((state) => state.cartReducer.value.items);
   const total = useSelector((state) => state.cartReducer.value.total);
   const [triggerPost, result] = usePostOrderMutation()
 
-  // useEffect(() => {
-  //   const total = allCartItems.reduce((acc, currentItem) => 
-  //     acc += (currentItem.quantity * currentItem.price), 0)
-  //   setCartItems(allCartItems)
-  //   setTotal(total)
-  //   console.log("total", total)
-  // }, [])
-  const confirmCart = ()=> {
-    triggerPost({ total, cartItems, user: "loggedUser"}) // Harcodeo el usuario
+  const confirmCart = () => {
+    triggerPost({ total, cartItems, user: "loggedUser" })
   }
+
   return (
-    <View>
-      {
-        cartItems.length > 0 ?
-          (
-            <>
-              <FlatList
-                data={cartItems}
-                renderItem={({ item }) => <CartItem item={item} />}
-                keyExtractor={(cartItems) => cartItems.id}
-              />
-              <Text> Total: $ {total}</Text>
-              <Pressable onPress={confirmCart}>
-                <Text>Confirmar</Text>
-              </Pressable>
-            </>
-
-          ) :
-          <Text>No hay productos en el carrito</Text>
-
-      }
-
+    <View style={styles.container}>
+      {cartItems.length > 0 ? (
+        <>
+          <FlatList
+            data={cartItems}
+            renderItem={({ item }) => <CartItem item={item} />}
+            keyExtractor={(cartItem) => cartItem.id}
+          />
+          <Text>Total: ${total}</Text>
+          <Pressable style={styles.confirm} onPress={confirmCart}>
+            <Text style={styles.confirmText}>Confirmar</Text>
+          </Pressable>
+        </>
+      ) : (
+        <Text>No hay productos agregados</Text>
+      )}
     </View>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: "100%",
+    paddingHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.rubik_cream_light,
+  },
+  confirm: {
+    padding: 10,
+    borderRadius: 6,
+    backgroundColor: colors.blue_300,
+  },
+  confirmText: {
+    fontFamily: "InterBold",
+    fontSize: 22,
+    color: "white",
+  },
+});

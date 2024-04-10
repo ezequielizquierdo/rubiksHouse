@@ -4,36 +4,74 @@ export const authSlice = createSlice({
   name: "auth",
   initialState: {
     value: {
-      user: true,
+      user: null,
       token: null,
-      imageCamera: null, // Se inicializa como null, pero es el estado inicial de la camara
-      localId: "idlocalCustom",
+      imageCamera: null,
+      localId: null,
       profileImage: null,
+      location: {
+        latitude: null,
+        longitude: null,
+        address: null,
+      },
     },
   },
   reducers: {
     setUser: (state, action) => {
       state.value = {
-        user: action.payload.data.email,
-        token: action.payload.data.idToken,
+        ...state.value,
+        user: action.payload.email,
+        token: action.payload.idToken,
+        localId: action.payload.localId,
       };
     },
     clearUser: (state) => (state.value = { user: null, token: null }),
-    setCameraImage: (state, action) => { // Esta funcion setea la imagen
+    setCameraImage: (state, action) => {
       state.value = {
-        ...state.value, // Tomo todos los datos en state.value
-        imageCamera: action.payload,  // Seteo la prop imageCamera
+        ...state.value,
+        imageCamera: action.payload,
       };
     },
     setProfileImage: (state, action) => {
       state.value = {
         ...state.value,
-        profileImage: action.payload, // Seteo profileImage con la action.payload
+        profileImage: action.payload,
+      };
+    },
+    setUserLocation: (state, action) => {
+      state.value = {
+        ...state.value,
+        location: {
+          latitude: action.payload.latitude,
+          longitude: action.payload.longitude,
+          address: action.payload.address,
+        },
+      };
+    },
+    logout: (state) => {
+      state.value = {
+        user: null,
+        token: null,
+        imageCamera: null,
+        localId: null,
+        profileImage: null,
+        location: {
+          latitude: null,
+          longitude: null,
+          address: null,
+        },
       };
     },
   },
 });
 
-export const { setUser, clearUser, setCameraImage, setProfileImage } = authSlice.actions;
+export const {
+  setUser,
+  clearUser,
+  setCameraImage,
+  setProfileImage,
+  setUserLocation,
+  logout,
+} = authSlice.actions;
 
 export default authSlice.reducer;

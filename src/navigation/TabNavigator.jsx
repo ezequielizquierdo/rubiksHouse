@@ -16,20 +16,20 @@ const TabNavigator = () => {
         <Tab.Navigator
             screenOptions={
                 {
-                    headerShown: true,
-                    tabBarShowLabel: false,
+                    headerShown: false, // Muestro header con el nombre de la tab
+                    tabBarShowLabel: false, // Muestro el label con el nombre de la tab
                     tabBarStyle: styles.tabBar
                 }
             }>
             <Tab.Screen
-                name='ShopStack'
+                name='ShopTab'
                 component={ShopStack}
                 options={{
                     tabBarIcon: ({ focused }) => {
                         return (
                             <View style={styles.tabContainer}>
                                 <Entypo name="shop" size={30} color={focused ? "black" : "grey"} />
-                                <Text>Shop</Text>
+                                <Text style={{ color: focused ? "black" : "grey" }}>Shop</Text>
                             </View>
                         )
                     }
@@ -43,7 +43,7 @@ const TabNavigator = () => {
                         return (
                             <View style={styles.tabContainer}>
                                 <AntDesign name="shoppingcart" size={30} color={focused ? "black" : "grey"} />
-                                <Text>Cart</Text>
+                                <Text style={{ color: focused ? "black" : "grey" }}>Cart</Text>
                             </View>
                         )
                     }
@@ -57,7 +57,7 @@ const TabNavigator = () => {
                         return (
                             <View style={styles.tabContainer}>
                                 <FontAwesome name="list-ul" size={30} color={focused ? "black" : "grey"} />
-                                <Text>Orders</Text>
+                                <Text style={{ color: focused ? "black" : "grey" }}>Orders</Text>
                             </View>
                         )
                     }
@@ -75,7 +75,7 @@ const TabNavigator = () => {
                   size={30}
                   color={focused ? "black" : "grey"}
                 />
-                <Text style={{ color: focused ? "black" : "grey" }}>My profile</Text>
+                <Text style={{ color: focused ? "black" : "grey" }}>Profile</Text>
               </View>
             );
           },

@@ -1,40 +1,56 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Pressable, Image } from "react-native";
 import { colors } from "../global/colors";
+import { MaterialIcons } from "@expo/vector-icons";
+import { useDispatch, useSelector } from "react-redux";
 import Constants from "expo-constants";
+import { deleteSession } from "../db";
 
 export default function Header({ title }) {
+  const { localId, user } = useSelector((state) => state.authReducer.value);
+  const dispatch = useDispatch();
+
+  const onLogout = async () => {
+    dispatch(logout());
+    const deletedSession = await deleteSession({ localId });
+    console.log("deletedSession", deletedSession)
+  };
+
   return (
     <View style={styles.container}>
-      {/* <Image style={styles.image} src={"https://images.ctfassets.net/r3qu44etwf9a/22WJhewcLVQ4P36RbBobeo/c7bb6fe9211b6a998b250661b9863f6d/rubiks-logo.png?w=600&h=223&q=50&fm=png"} /> */}
-      <Text style={styles.text}>{title}</Text>
+      <Image source={require('../../assets/rubikshouselogo.png')} style={styles.image} />
+      {user && (
+        <Pressable style={styles.logoutIcon} onPress={onLogout}>
+          <MaterialIcons name="logout" size={24} color="white" />
+        </Pressable>
+      )}
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   // backgroundColor: colors.blue_300,
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   flexDirection: "row",
-  //   paddingTop: Constants.statusBarHeight,
-  //   height: 160
-  // },
+
   container: {
-    height: 200,
+    height: 150,
     width: "100%",
-    backgroundColor: colors.blue_300,
+    // backgroundColor: colors.rubik_cream_blue,
+    backgroundColor: colors.rubik_cream_light,
     justifyContent: "center",
     alignItems: "center",
-  paddingTop: Constants.statusBarHeight,
-
+    paddingTop: Constants.statusBarHeight,
   },
   image: {
-    width: "45%",
+    width: "50%",
     height: "60%"
   },
   text: {
+    textAlign: "center",
+    color: "white",
     fontFamily: "InterExtraBold",
     fontSize: 20,
-  }
+  },
+  logoutIcon: {
+    position: "absolute",
+    right: 20,
+    paddingTop: Constants.statusBarHeight,
+  },
 });

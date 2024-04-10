@@ -8,7 +8,7 @@ import { setUser } from "../features/auth/authSlice";
 import { signupSchema } from "../validations/signupSchema";
 
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   // estado del email
   const [email, setEmail] = useState("");
   // estado para error de email
@@ -86,6 +86,9 @@ const Signup = () => {
         onChange={setConfirmPassword}
         isSecure={true}
       />
+         <Pressable onPress={() => navigation.navigate("Login")}>
+        <Text>Ir al login</Text>
+      </Pressable>
       <SubmitButton title={"Registrate"} onPress={onSubmit} />
     </View>
   );

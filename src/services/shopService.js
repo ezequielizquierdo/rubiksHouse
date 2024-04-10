@@ -21,18 +21,32 @@ export const shopApi = createApi({
         body: order,
       }),
     }),
-    getProfileImage: builder.query({ // Accedo al recurso con el build.query
-      query: (localId) => `profileImages/${localId}.json`, // La ruta va al profileImage y valida si hay imagen
+    getProfileImage: builder.query({
+      query: (localId) => `profileImages/${localId}.json`,
     }),
-    postProfileImage: builder.mutation({ 
-      query: ({ localId, image }) => ({ // Le pasamos el localId y la image
-        url: `profileImages/${localId}.json`, // La ruta va al profileImage, si no existe lo crea
-        method: "PUT", // Usamos el metodo PUT para que no genere una clave adicional cuando creamos el recurso. Si usamos POST, si lo generaria.
+    postProfileImage: builder.mutation({
+      query: ({ localId, image }) => ({
+        url: `profileImages/${localId}.json`,
+        method: "PUT",
         body: {
-          image: image, // Le paso la imagen que recibe por parámetro.
+          image: image,
         },
       }),
     }),
+    getUserLocation: builder.query({
+      query: (localId) => `locations/${localId}.json`,
+    }),
+    postUserLocation: builder.mutation({
+      query: ({ localId, location}) => ({
+        url: `locations/${localId}.json`,
+        method: "PUT",
+        body: {
+          latitude: location.latitude,
+          longitude: location.longitude,
+          address: location.address
+        },
+      })
+    })
   }),
 });
 
@@ -42,4 +56,6 @@ export const {
   usePostOrderMutation,
   useGetProfileImageQuery,
   usePostProfileImageMutation,
+  useGetUserLocationQuery,
+  usePostUserLocationMutation,
 } = shopApi;

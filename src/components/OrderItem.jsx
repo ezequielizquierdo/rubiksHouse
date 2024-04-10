@@ -3,7 +3,6 @@ import React from 'react'
 
 
 const OrderItem = ({ item }) => {
-
     const total = item.items.reduce((acc, currentItem) =>
         acc += (currentItem.quantity * currentItem.price), 0)
     return (

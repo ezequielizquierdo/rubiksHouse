@@ -46,17 +46,8 @@ export const cartSlice = createSlice({
         };
       }
     },
-    // Lógica para remover
     removeItem: (state, action) => {
-      const itemIdToRemove = action.payload.id;
-      const updatedItems = state.value.items.filter(item => item.id !== itemIdToRemove);
-      const total = updatedItems.reduce((acc, currentItem) => (acc += currentItem.price * currentItem.quantity), 0);
-      state.value = {
-        ...state.value,
-        items: updatedItems,
-        total,
-        updatedAt: new Date().toLocaleString(),
-      };
+      //Logica para remover el producto
     },
   },
 });

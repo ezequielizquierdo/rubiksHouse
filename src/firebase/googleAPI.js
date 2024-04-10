@@ -1,5 +1,4 @@
-// MODIFICAR
 
 export const googleAPI = {
-    mapStatic: "AIzaSyD8TQn--dGkoGzBSQOuNj3oO97YElC1XFA",
+    mapStatic: "AIzaSyDITRUiGpT9H1h12naSE__vvUUQH1oBp5I", // API Key de Maps Platform
   };
